@@ -14,12 +14,15 @@ import static ballthrower.PanelLauncher.WAIT;
  */
 public class BallAdder extends Rectangle {
 
+    public static final int WIDTH = 100;
+    public static final int HEIGHT = 10;
+
     public BallAdder(ArrayList<Ball> balls, Pane pane) {
         setFill(Color.BLUE);
-        setX(0);
-        setY(0);
-        setWidth(100);
-        setHeight(10);
+        setX(10);
+        setY(10);
+        setWidth(WIDTH);
+        setHeight(HEIGHT);
         setOnDragDetected((e) ->
                 new Thread(() -> {
                     while (this.isPressed()) {
@@ -31,6 +34,6 @@ public class BallAdder extends Rectangle {
                         }
                     }
                 }).start());
-        setOnMouseClicked((e)-> balls.add(new Ball(pane, 200, 200)));
+        setOnMouseClicked((e)-> balls.add(new Ball(pane, getX()+(WIDTH/2), getY())));
     }
 }

@@ -27,7 +27,7 @@ public class Ball extends Circle {
     private double gravity;
     private String text;
 
-    public Ball(Pane pane, int x, int y) {
+    public Ball(Pane pane, double x, double y) {
         this.pane = pane;
         xVelocity = 0;
         yVelocity = 0;
